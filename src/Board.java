@@ -55,4 +55,27 @@ public class Board extends JPanel {
     private int currentSpeed = 3;
     private short[] screenData;
     private Timer timer;
+
+    public Board(){
+        initVariables();
+        initBoard();
+    }
+
+    public void initBoard(){
+        setFocusable(true);
+        setBackground(Color.BLACK);
+    }
+
+    private void initVariables(){
+        screenData = new short[N_BLOCK*N_BLOCK];
+        mazeColor = new Color(5, 100, 5);
+        d = new Dimension(400, 400);
+        ghost_x = new int[MAX_GHOSTS];
+        ghost_dx = new int[MAX_GHOSTS];
+        ghost_y = new int[MAX_GHOSTS];
+        ghost_dy = new int[MAX_GHOSTS];
+        ghostSpeed = new int[MAX_GHOSTS];
+        dx = new int[4];
+        dy = new int[4];
+    }
 }
